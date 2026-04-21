@@ -1,28 +1,26 @@
 # Gumtree Scraper Service
 
-A local Express + Puppeteer service that mirrors the scraper n8n calls at `localhost:3000`.
+A fast, pure HTTP-based Express service optimized with Axios and Cheerio. This scraper is built to fetch Gumtree listings directly and return the results synchronously, skipping slow headless browser overheads.
 
 ## Setup
 
+1. Install dependencies (make sure `puppeteer` is removed if upgrading from an older version):
 ```bash
-cd gumtree-scraper
 npm install
 ```
 
-> Puppeteer will auto-download Chromium on first install (~170 MB). If you already
-> have Chrome installed, you can set `PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true` and
-> set `PUPPETEER_EXECUTABLE_PATH=/path/to/chrome` instead.
-
-## Start
-
+2. Start the server (defaults to port 3000):
 ```bash
 node server.js
-# or for auto-reload during development:
-npx nodemon server.js
+```
+
+You can optionally use `nodemon` for development:
+```bash
+npm run dev
 ```
 
 The server starts on **http://localhost:3000** by default.
-Override with `PORT=3001 node server.js`.
+Override the port by setting an environment variable: `PORT=3001 node server.js`.
 
 ---
 
@@ -30,33 +28,26 @@ Override with `PORT=3001 node server.js`.
 
 ### `POST /scrape`
 
-Starts an async scrape job.
+Starts a scrape job and synchronously returns the structured data extracted.
 
 **Body (JSON):**
 ```json
 {
   "url": "https://www.gumtree.com/flats-houses/property-to-rent/uk/england?sort=relevance&search_category=property-to-rent&seller_type=private",
-  "pages": 2
+  "pages": 5,
+  "retries": 3,
+  "proxies": [
+    "http://username:pass@proxy.example.com:8080"
+  ]
 }
 ```
 
-**Response:**
-```json
-{ "runId": "550e8400-e29b-41d4-a716-446655440000" }
-```
+- `url`: (Required) The target URL to start scraping from.
+- `pages`: (Optional) Number of pages to paginate through. Defaults to 5.
+- `retries`: (Optional) Number of times to retry if a request fails. Defaults to 3.
+- `proxies`: (Optional) Array of proxy strings. Will rotate through them randomly on retries.
 
----
-
-### `GET /scrape-results/:runId`
-
-Poll until `status` is no longer `"pending"`.
-
-**Response (pending):**
-```json
-{ "status": "pending" }
-```
-
-**Response (done):**
+**Response (Success):**
 ```json
 {
   "status": "done",
@@ -87,22 +78,18 @@ Poll until `status` is no longer `"pending"`.
 Quick liveness check.
 
 ```json
-{ "ok": true, "activeJobs": 1 }
+{ "ok": true }
 ```
 
 ---
 
 ## How it fits into the n8n workflow
 
-```
-Schedule → Get Sheet IDs → POST /scrape → Extract runId
-  → Wait 30s → GET /scrape-results/:runId
-  → (loop if pending) → Filter & Deduplicate → Build Message → Write to Sheet
-```
-
-The scraper service replaces the external scraping tool previously used in the workflow.
-All n8n nodes remain unchanged — this service just needs to be running locally
-before the workflow executes.
+1. The workflow triggers according to its schedule.
+2. It hits the `POST /scrape` endpoint on this service.
+3. The server immediately acts on fetching and parsing pages, returning the finished payload inside the response.
+4. No explicit wait/polling loop is necessary.
+5. The dataset seamlessly continues sequentially to your Filters and Sheet operations.
 
 ---
 
@@ -110,7 +97,6 @@ before the workflow executes.
 
 | Problem | Fix |
 |---|---|
-| `Error: Failed to launch the browser` | Run `npm install` again or install missing libs: `sudo apt-get install -y libgbm1 libnss3` |
-| Listings come back empty | Gumtree may have changed its HTML structure. Check selectors in `scraper.js` with `headless: false` to debug visually |
-| Bot detection / CAPTCHA | Add a longer delay in `scraper.js` or use a residential proxy via `PUPPETEER_PROXY` env var |
-| Puppeteer too slow | Reduce `pages` in the n8n workflow body to `1` |
+| `Cannot find module 'axios'` | Run `npm install` to grab the newly added HTTP toolset packages. |
+| Empty results or `AxiosError: 403` | Gumtree may have blocked your IP. If you are scraping at high frequencies, pass an array of proxies into the JSON payload body or space out scraping intervals. Note: this is target behaviour, not code failure. |
+| Timeouts during scraping | Gumtree might be rate limiting you. Try decreasing the `pages` scraped simultaneously, reduce your n8n workflow execution frequency, or utilize robust rotating residential proxy servers. |
