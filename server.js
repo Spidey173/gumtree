@@ -107,7 +107,7 @@ app.get('/health', (_req, res) => {
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`[Server] Gumtree scraper service listening on http://localhost:${PORT}`);
+  console.log(`[Server] Gumtree scraper service listening on port ${PORT} (0.0.0.0)`);
   console.log(`  POST /scrape            – start a scrape job`);
   console.log(`  GET  /scrape-results/:id – poll for results`);
   console.log(`  GET  /health             – liveness check`);
