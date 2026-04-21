@@ -21,6 +21,8 @@ async function scrapeListings({ url, pages = 2, retries = 3, proxies = [] } = {}
     const args = [
       '--no-sandbox',
       '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
       '--disable-blink-features=AutomationControlled',
       '--disable-infobars',
       '--window-size=1280,900',
