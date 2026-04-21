@@ -1,0 +1,453 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1fQ6BG3FsQcz_gMFMXYHUJomhd55Avg7As6niyEcFk18",
+          "mode": "list",
+          "cachedResultName": "Untitled spreadsheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fQ6BG3FsQcz_gMFMXYHUJomhd55Avg7As6niyEcFk18/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fQ6BG3FsQcz_gMFMXYHUJomhd55Avg7As6niyEcFk18/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "listing_id": "={{ $json.listing_id }}",
+            "listing_url": "={{ $json.listing_url }}",
+            "title": "={{ $json.title }}",
+            "price_value": "={{ $json.price_value }}",
+            "price": "={{ $json.price }}",
+            "location": "={{ $json.location }}",
+            "bedrooms": "={{ $json.bedrooms }}",
+            "property_type": "={{ $json.property_type }}",
+            "Seller Name": "={{ $json['Seller Name'] }}",
+            "Phone Number": "={{ $json['Phone Number'] }}",
+            "Date Available": "={{ $json['Date Available'] }}",
+            "Description": "={{ $json.description }}",
+            "Image Url": "={{ $json['Image Url'] }}",
+            "Scraped At": "={{ $json['Scraped At'] }}",
+            "Status": "={{ $json.Status }}",
+            "Draft Message": "={{ $json['Draft Message'] }}",
+            "Approved": "={{ $json.Approved }}",
+            "Sent At": "={{ $json['Sent At'] }}",
+            "Notes": "={{ $json.Notes }}",
+            "seller_type": "={{ $json.seller_type }}"
+          },
+          "matchingColumns": [
+            "listing_id"
+          ],
+          "schema": [
+            {
+              "id": "listing_id",
+              "displayName": "listing_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "listing_url",
+              "displayName": "listing_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "price",
+              "displayName": "price",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "price_value",
+              "displayName": "price_value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "location",
+              "displayName": "location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "property_type",
+              "displayName": "property_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "bedrooms",
+              "displayName": "bedrooms",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Seller Name",
+              "displayName": "Seller Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Phone Number",
+              "displayName": "Phone Number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Date Available",
+              "displayName": "Date Available",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Description",
+              "displayName": "Description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Image Url",
+              "displayName": "Image Url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Scraped At",
+              "displayName": "Scraped At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Draft Message",
+              "displayName": "Draft Message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Approved",
+              "displayName": "Approved",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sent At",
+              "displayName": "Sent At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "seller_type",
+              "displayName": "seller_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Posted Date",
+              "displayName": "Posted Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "77ca50b1-1179-4a1c-8511-0434cc51c385",
+      "name": "Write Draft to Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2640,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "qIxkFvyElXGV5Vod",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "224d6843-5dbb-49d7-8a0f-5d48c57b4b3a",
+      "name": "Schedule Every 2 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1fQ6BG3FsQcz_gMFMXYHUJomhd55Avg7As6niyEcFk18",
+          "mode": "list",
+          "cachedResultName": "Untitled spreadsheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fQ6BG3FsQcz_gMFMXYHUJomhd55Avg7As6niyEcFk18/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fQ6BG3FsQcz_gMFMXYHUJomhd55Avg7As6niyEcFk18/edit#gid=0"
+        },
+        "options": {}
+      },
+      "id": "db149649-dfe6-4de4-bae8-b600a223bfcf",
+      "name": "Get All IDs1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        224,
+        0
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "qIxkFvyElXGV5Vod",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const results = [];\nconst inputs = $input.all();\nfor (let i = 0; i < inputs.length; i++) {\n  const data = inputs[i].json;\n  const firstName = (data['Seller Name'] && data['Seller Name'] !== 'N/A' && data['Seller Name'] !== '')\n    ? data['Seller Name'].split(' ')[0]\n    : 'there';\n\n  const message = 'Hi ' + firstName + ',\\n\\n'\n    + 'I noticed you\\'re advertising your property on Gumtree and just wanted to introduce myself.\\n\\n'\n    + 'With the increasing number of regulations in the rental sector and upcoming changes such as the Renters Reform Bill from 1st of May, many landlords are unaware of how many compliance rules now apply. Getting these wrong can result in significant fines or legal issues.\\n\\n'\n    + 'Such as providing tenants with a new information sheet from the government explaining tenancies moving to period \\u2014 if this is not done you can get fines up to \\u00a37,000.\\n\\n'\n    + 'If you\\'d find it helpful, I would be happy to run through the key compliance requirements and upcoming changes with you.\\n\\n'\n    + 'You can book a quick call here:\\nhttps://meetings.hubspot.com/dan648/gumtree-b2c-outreach-\\n\\n'\n    + 'Kind regards,\\nDan';\n\n  results.push({ json: Object.assign({}, data, { 'Draft Message': message, 'Status': 'Drafted' }) });\n}\nreturn results;"
+      },
+      "id": "77751d8b-054b-4324-bb31-c64829a92c8d",
+      "name": "Build Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2192,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:3000/scrape",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"url\": \"https://www.gumtree.com/flats-houses/property-to-rent/uk/england?sort=relevance&search_category=property-to-rent&seller_type=private\",\n  \"pages\": 5,\n  \"retries\": 3,\n  \"proxies\": [\n    \"http://username:pass@proxy.example.com:8080\"\n  ]\n}",
+        "options": {}
+      },
+      "id": "28d13666-287a-4f32-b49c-eec1dc0dec4e",
+      "name": "Start Local Scrape",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        448,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the API response\nconst scrapeResult = $input.item.json; // Assuming the node returns the JSON as a single item\nconst gumtreeData = (scrapeResult?.data || []).map(item => ({ ...item, source: 'Gumtree' }));\n\n// Existing IDs from your sheet node (if needed)\nconst sheetItems = $('Get All IDs1').all();\nconst existingIds = new Set(\n  sheetItems.map(r => r.json.listing_id).filter(Boolean).map(String)\n);\n\n// Keywords for filtering\nconst blockKeywords = ['block', 'mansion', 'portfolio', 'freehold', 'apartments', 'units', 'entire'];\nconst commercialKeywords = ['commercial', 'office', 'retail', 'warehouse', 'shop', 'business premises', 'storage unit', 'industrial'];\n\n// Filter new listings\nconst newListings = gumtreeData.filter(item => {\n  // Skip if already exists in sheet\n  if (existingIds.has(String(item.listing_id))) return false;\n\n  // Skip if commercial keywords present\n  const text = ((item.title || '') + ' ' + (item.description || '')).toLowerCase();\n  if (commercialKeywords.some(kw => text.includes(kw))) return false;\n\n  return true;\n}).map(item => {\n  // Classify property\n  const text = ((item.title || '') + ' ' + (item.description || '')).toLowerCase();\n  const isBlock = blockKeywords.some(kw => text.includes(kw));\n  return { ...item, classification: isBlock ? 'Block of Apartments' : 'Single Apartment' };\n});\n\nconsole.log('Gumtree scraped:', gumtreeData.length, '| Existing in sheet:', existingIds.size, '| New after dedup:', newListings.length);\n\n// Format for output\nreturn newListings.map(item => ({ json: {\n  listing_id:       String(item.listing_id || ''),\n  listing_url:      String(item.listing_url || ''),\n  title:            String(item.title || ''),\n  price:            String(item.price || ''),\n  price_value:      item.price_value || '',\n  location:         String(item.location || ''),\n  property_type:    item.classification,\n  bedrooms:         String(item.bedrooms || ''),\n  \"Seller Name\":    item['Seller Name'] || '',\n  \"Phone Number\":   '', // you can extract if available\n  \"Date Available\": item['Date Available'] || '',\n  \"Posted Date\":    String(item.scraped_at || ''),\n  description:      item.description || '',\n  \"Image Url\":      String(item.imageUrl || ''),\n  \"Scraped At\":     new Date().toISOString(),\n  \"Status\":         'New',\n  \"Draft Message\":  '',\n  \"Approved\":       'FALSE',\n  \"Sent At\":        '',\n  \"Notes\":          '',\n  \"seller_type\":    (item.features || []).includes('Private') ? 'Private' : 'Agency'\n}}));"
+      },
+      "id": "9a9a895a-25a8-47b2-af3b-c16fe35d56a2",
+      "name": "Filter and Deduplicate",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        0
+      ],
+      "continueOnFail": true,
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "Schedule Every 2 Hours": {
+      "main": [
+        [
+          {
+            "node": "Get All IDs1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All IDs1": {
+      "main": [
+        [
+          {
+            "node": "Start Local Scrape",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Local Scrape": {
+      "main": [
+        [
+          {
+            "node": "Filter and Deduplicate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter and Deduplicate": {
+      "main": [
+        [
+          {
+            "node": "Build Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Message": {
+      "main": [
+        [
+          {
+            "node": "Write Draft to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "6f5b93fbef87ecb6d36f546f886f0329f6726f510fa13bf47454ab8eb5496a7d"
+  }
+}
